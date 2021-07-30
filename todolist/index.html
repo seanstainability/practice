@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/6c64404a8e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="main.js" defer></script>
+    <style>
+      body {
+        height: 100vh;
+        background-color: #05445e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Gowun Batang", serif;
+        box-sizing: border-box;
+      }
+      .container {
+        background-color: #d4f1f4;
+        width: 400px;
+        height: 600px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        bbox-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+      }
+      .header,
+      .footer {
+        width: 100%;
+        height: 50px;
+        background-color: #189ab4;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 50px;
+      }
+      .header {
+        border-radius: 20px 20px 0px 0px;
+        color: black;
+      }
+      .contents {
+        height: 400px;
+        padding: 0;
+        overflow-y: auto;
+      }
+      .list {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 32px;
+      }
+      .delBtn {
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        transition: all 200ms ease-in;
+      }
+      .delBtn:hover {
+        color: brown;
+        transform: scale(1.1);
+      }
+      .divider {
+        width: 90%;
+        height: 1px;
+        background-color: black;
+        margin: auto;
+      }
+      .footer {
+        border-radius: 0px 0px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 80px;
+      }
+      .input-area {
+        width: 100%;
+        border: none;
+        padding: 0 16px;
+        height: 3em;
+        outline: none;
+        margin-bottom: 4px;
+        font-family: "Gowun Batang", serif;
+        font-weight: 400;
+      }
+      .addBtn {
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        font-size: 18px;
+        font-family: "Gowun Batang", serif;
+        font-weight: 400;
+        color: #d4f1f4;
+      }
+      .addBtn:hover {
+        color: #05445e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">할 일 목록 👨🏻‍💻</header>
+      <ul class="contents">
+        <div class="content">
+          <li class="list">
+            <span class="list_title">잠자기</span
+            ><button class="delBtn"><i class="far fa-trash-alt"></i></button>
+          </li>
+          <div class="divider"></div>
+        </div>
+      </ul>
+      <footer class="footer">
+        <input
+          type="text"
+          class="input-area"
+          placeholder="심심하니까 할 일 좀 추가해 주실래요?"
+        />
+        <button class="addBtn">추가하기</button>
+      </footer>
+    </div>
+  </body>
+</html>
