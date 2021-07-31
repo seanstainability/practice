@@ -17,6 +17,8 @@ class PartTimeEmployee implements Employee {
 }
 
 // 세부적인 타입을 인자로 받아서 정말 추상적인 타입으로 다시 리턴하는 함수는 💩💩💩
+// Employee 타입을 리턴타입으로 설정하였기 때문에 세부적인 타입을 인자로 받아도
+// workFullTime 혹은 workPartTime에 대한 정보가 없는 Employee 타입이 리턴된다.
 function payBad(employee: Employee): Employee {
   employee.pay();
   return employee;
@@ -35,18 +37,22 @@ bob.workPartTime();
 const ellieAfterPay = pay(ellie);
 const bobAfterPay = pay(bob);
 
+// const ellieAfterPay = pay(ellie) as FullTimeEmployee; // 타입 단언 대신 제네릭으로 해결!
+// ellieAfterPay.workFullTime(); // Employee 타입으로 리턴받아 workFullTime의 정보가 없다.
+
+// 예제2
 const obj = {
-  name: 'ellie',
+  name: "ellie",
   age: 20,
 };
 
 const obj2 = {
-  animal: '🐕',
+  animal: "🐕",
 };
 
-console.log(getValue(obj, 'name')); // ellie
-console.log(getValue(obj, 'age')); // 20
-console.log(getValue(obj2, 'animal')); // 🐕
+console.log(getValue(obj, "name")); // ellie
+console.log(getValue(obj, "age")); // 20
+console.log(getValue(obj2, "animal")); // 🐕
 
 function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
