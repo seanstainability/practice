@@ -1,13 +1,15 @@
 type PageInfo = {
   title: string;
 };
-type Page = 'home' | 'about' | 'contact';
+type Page = "home" | "about" | "contact";
 
 const nav: Record<Page, PageInfo> = {
-  home: { title: 'Home' },
-  about: { title: 'About' },
-  contact: { title: 'Contact' },
+  // Page를 key로 삼고, PageInfo를 Value로 삼는다.
+  home: { title: "Home" },
+  about: { title: "About" },
+  contact: { title: "Contact" },
 };
 
-type Product = 'cat' | 'dog';
-type NewProduct = Capitalize<Product>; // 'Cat' | 'Dog'
+// 기타...
+type Product = "cat" | "dog";
+type NewProduct = Capitalize<Product>; // 'Cat' | 'Dog' 대문자화
